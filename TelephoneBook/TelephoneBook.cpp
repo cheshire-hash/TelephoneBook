@@ -1,14 +1,14 @@
 #include "TelephoneBook.h"
 #include<iostream>
 using namespace std;
-TelephoneBook::TelephoneBook()
+TelephoneBook::TelephoneBook() : listAbonent(nullptr), count(0)
 {
 	name = nullptr;
 	surname = nullptr;
 	telefonNumber = nullptr;
 }
 
-TelephoneBook::TelephoneBook(const char* n, const char* s, const char* t)
+TelephoneBook::TelephoneBook(const char* n, const char* s, const char* t) : listAbonent(nullptr), count(0)
 {
 	name = new char[strlen(n) + 1];
 	strcpy_s(name, strlen(n) + 1, n);
@@ -87,7 +87,10 @@ void TelephoneBook::Init(const char* n, const char* s, const char* t)
 
 void TelephoneBook::Output()
 {
-	cout << "Name: " << name << "\tSurname: " << surname << "\tTelefon number: " << telefonNumber << endl;
+	for (int i = 0; i < count; i++) {
+		cout << listAbonent[i]->GetN() << " " << listAbonent[i]->GetS() << " " << listAbonent[i]->GetT() << endl;
+	}
+
 }
 
 TelephoneBook::~TelephoneBook()

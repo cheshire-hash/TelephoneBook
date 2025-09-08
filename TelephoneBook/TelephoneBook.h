@@ -16,7 +16,7 @@ public:
 	void SetT(const char* t);
 
 	void Init(const char* n, const char* s, const char* t);
-	void Input();
+	void Output();
 	~TelephoneBook();
 };
 

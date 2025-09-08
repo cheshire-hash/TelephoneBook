@@ -36,6 +36,7 @@ char* TelephoneBook::GetT()
 
 TelephoneBook* TelephoneBook::AddAbonent(TelephoneBook& abonent) 
 {
+	char* listAbonent = new char[20];
 	abonent.Init(name, surname, telefonNumber);
 	return this;
 }

@@ -95,4 +95,8 @@ TelephoneBook::~TelephoneBook()
 	delete[] name;
 	delete[] surname;
 	delete[] telefonNumber;
+	for (int i = 0; i < count; i++) {
+		delete listAbonent[i];
+	}
+	delete[] listAbonent;
 }

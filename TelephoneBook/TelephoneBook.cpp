@@ -87,6 +87,7 @@ void TelephoneBook::Init(const char* n, const char* s, const char* t)
 
 void TelephoneBook::Output()
 {
+	cout << name << " " << surname << " " << telefonNumber << endl;
 	for (int i = 0; i < count; i++) {
 		cout << listAbonent[i]->GetN() << " " << listAbonent[i]->GetS() << " " << listAbonent[i]->GetT() << endl;
 	}

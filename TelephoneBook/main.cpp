@@ -2,8 +2,10 @@
 #include"TelephoneBook.h"
 using namespace std;
 int main() {
-	TelephoneBook obj1;
-	obj1.Init("Vlad,", "Surname", "+177777777777");
-	obj1.Output();
-	obj1.AddAbonent("Ivan,", "Ivanov", "+188888888888");
+	TelephoneBook list;
+	list.Init("Vlad,", "Surname", "+177777777777");
+	list.AddAbonent("Ivan,", "Ivanov", "+188888888888");
+	list.AddAbonent("Petr,", "Petrov", "+199999999999");
+	list.AddAbonent("Sidor,", "Sidorov", "+166666666666");
+	list.Output();
 }

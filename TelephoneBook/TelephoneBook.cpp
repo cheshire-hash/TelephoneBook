@@ -11,7 +11,7 @@ TelephoneBook::TelephoneBook()
 
 TelephoneBook::TelephoneBook(const char* n, const char* s, const char* t)
 {
-	name = new char[strlen(n) + 1];
+	name  = new char[strlen(n) + 1];
 	strcpy_s(name, strlen(n) + 1, n);
 	surname = new char[strlen(s) + 1];
 	strcpy_s(surname, strlen(s) + 1, s);
@@ -32,6 +32,11 @@ char* TelephoneBook::GetS()
 char* TelephoneBook::GetT()
 {
 	return telefonNumber;
+}
+
+TelephoneBook* TelephoneBook::AddAbonent(const TelephoneBook& abonent)
+{
+	return nullptr;
 }
 
 void TelephoneBook::SetN(const char* n)

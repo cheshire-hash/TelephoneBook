@@ -10,7 +10,7 @@ public:
 	char* GetN();
 	char* GetS();
 	char* GetT();
-	TelephoneBook* AddAbonent(const TelephoneBook& abonent);
+	TelephoneBook* AddAbonent(TelephoneBook& abonent);
 	void SetN(const char* n);
 	void SetS(const char* s);
 	void SetT(const char* t);

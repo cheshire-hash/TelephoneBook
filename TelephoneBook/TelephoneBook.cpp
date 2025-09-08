@@ -36,8 +36,16 @@ char* TelephoneBook::GetT()
 
 TelephoneBook* TelephoneBook::AddAbonent(TelephoneBook& abonent) 
 {
-	TelephoneBook* listAbonent = new TelephoneBook{};
-	abonent.Init(name, surname, telefonNumber);
+	TelephoneBook* NewListAbonent = new TelephoneBook[count + 1];
+	for (int i = 0; i < count; i++)
+	{
+		NewListAbonent[i].Init(listAbonent[i].GetN(), listAbonent[i].GetS(), listAbonent[i].GetT());
+	}
+	NewListAbonent[count].Init(abonent.GetN(), abonent.GetS(), abonent.GetT());
+	delete[] listAbonent;
+	listAbonent = NewListAbonent;
+	count++;
+
 	return listAbonent;
 }
 

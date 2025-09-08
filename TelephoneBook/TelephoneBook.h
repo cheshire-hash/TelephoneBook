@@ -4,6 +4,8 @@ class TelephoneBook
 	char* name;
 	char* surname;
 	char* telefonNumber;
+	TelephoneBook* listAbonent;
+	int count;
 public:
 	TelephoneBook();
 	TelephoneBook(const char* n, const char* s, const char* t);

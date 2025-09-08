@@ -4,7 +4,7 @@ class TelephoneBook
 	char* name;
 	char* surname;
 	char* telefonNumber;
-	TelephoneBook* listAbonent;
+	TelephoneBook** listAbonent;
 	int count;
 public:
 	TelephoneBook();
@@ -12,7 +12,7 @@ public:
 	char* GetN();
 	char* GetS();
 	char* GetT();
-	TelephoneBook* AddAbonent(TelephoneBook& abonent);
+	void AddAbonent(const char* n, const char* s, const char* t);
 	void SetN(const char* n);
 	void SetS(const char* s);
 	void SetT(const char* t);

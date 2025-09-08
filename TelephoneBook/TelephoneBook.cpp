@@ -1,7 +1,6 @@
 #include "TelephoneBook.h"
 #include<iostream>
 using namespace std;
-
 TelephoneBook::TelephoneBook()
 {
 	name = nullptr;
@@ -34,20 +33,23 @@ char* TelephoneBook::GetT()
 	return telefonNumber;
 }
 
-TelephoneBook* TelephoneBook::AddAbonent(TelephoneBook& abonent) 
+void TelephoneBook::AddAbonent(const char* n, const char* s, const char* t)
 {
-	TelephoneBook* newListAbonent = new TelephoneBook[count + 1];
-	for (int i = 0; i < count; i++)
-	{
-		newListAbonent[i].Init(listAbonent[i].GetN(), listAbonent[i].GetS(), listAbonent[i].GetT());
+	//указатель на указатель (массив указателей)
+	TelephoneBook** newListAbonent = new TelephoneBook* [count + 1];
+	//копируем старые указатели в новый массив
+	for (int i = 0; i < count; i++) {
+		newListAbonent[i] = listAbonent[i];
 	}
-	newListAbonent[count].Init(abonent.GetN(), abonent.GetS(), abonent.GetT());
+	//создаем новый объект и инициализируем
+	newListAbonent[count] = new TelephoneBook(n, s, t);
+	//удаляем старый массив указателей
 	delete[] listAbonent;
+	//перенаправляем указатель на новый массив
 	listAbonent = newListAbonent;
 	count++;
-
-	return listAbonent;
 }
+
 
 void TelephoneBook::SetN(const char* n)
 {

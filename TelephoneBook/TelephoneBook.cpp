@@ -50,6 +50,23 @@ void TelephoneBook::AddAbonent(const char* n, const char* s, const char* t)
 	count++;
 }
 
+void TelephoneBook::DeleteAbonent(int index)
+{
+	TelephoneBook** newListAbonent = new TelephoneBook* [count - 1];
+	for (int i = 0, j = 0; i < count; i++) {
+		if (i != index) {
+			newListAbonent[j] = listAbonent[i];
+			j++;
+		}
+		else {
+			delete listAbonent[i];
+		}
+	}
+	delete[] listAbonent;
+	listAbonent = newListAbonent;
+	count--;
+}
+
 
 void TelephoneBook::SetN(const char* n)
 {
@@ -87,10 +104,10 @@ void TelephoneBook::Init(const char* n, const char* s, const char* t)
 
 void TelephoneBook::Output()
 {
-	cout << name << " " << surname << " " << telefonNumber << endl;
 	for (int i = 0; i < count; i++) {
-		cout << listAbonent[i]->GetN() << " " << listAbonent[i]->GetS() << " " << listAbonent[i]->GetT() << endl;
+		listAbonent[i]->Output();
 	}
+	cout << name << " " << surname << " " << telefonNumber << endl;
 
 }
 
@@ -99,8 +116,8 @@ TelephoneBook::~TelephoneBook()
 	delete[] name;
 	delete[] surname;
 	delete[] telefonNumber;
-	for (int i = 0; i < count; i++) {
-		delete listAbonent[i];
-	}
-	delete[] listAbonent;
+	//for (int i = 0; i < count; i++) {
+	//	delete listAbonent[i];
+	//}
+	//delete[] listAbonent;
 }

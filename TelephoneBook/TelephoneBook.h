@@ -13,6 +13,7 @@ public:
 	char* GetS();
 	char* GetT();
 	void AddAbonent(const char* n, const char* s, const char* t);
+	void DeleteAbonent(int index);
 	void SetN(const char* n);
 	void SetS(const char* s);
 	void SetT(const char* t);

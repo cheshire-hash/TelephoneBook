@@ -111,13 +111,25 @@ void TelephoneBook::Output()
 
 }
 
+bool TelephoneBook::SymbolComparison(const char* n, const char* s)
+{
+	for (int i = 0; ; i++) {
+		if (n[i] != s[i]) {
+			return false;
+		}
+		if (n[i] == '\0' && s[i] == '\0') {
+			return true; 
+		}
+	}
+}
+
+void TelephoneBook::FoundAbonent()
+{
+}
+
 TelephoneBook::~TelephoneBook()
 {
 	delete[] name;
 	delete[] surname;
 	delete[] telefonNumber;
-	//for (int i = 0; i < count; i++) {
-	//	delete listAbonent[i];
-	//}
-	//delete[] listAbonent;
 }

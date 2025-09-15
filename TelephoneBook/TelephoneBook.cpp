@@ -132,4 +132,5 @@ TelephoneBook::~TelephoneBook()
 	delete[] name;
 	delete[] surname;
 	delete[] telefonNumber;
+
 }

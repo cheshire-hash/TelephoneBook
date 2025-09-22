@@ -21,7 +21,7 @@ public:
 	void Init(const char* n, const char* s, const char* t);
 	void Output();
 	bool SymbolComparison(const  char* n, const char* s);
-	void FoundAbonent();
+	void FoundAbonent(TelephoneBook** list, char* n, char* s);
 	~TelephoneBook();
 };
 

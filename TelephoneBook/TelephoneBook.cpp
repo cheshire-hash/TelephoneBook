@@ -123,9 +123,20 @@ bool TelephoneBook::SymbolComparison(const char* n, const char* s)
 	}
 }
 
-void TelephoneBook::FoundAbonent()
+void TelephoneBook::FoundAbonent(TelephoneBook** list, char* n, char* s)
 {
+	bool flag = false;
+	for (int i = 0; i < count; i++) {
+		if (SymbolComparison(n, list[i]->GetN()) && SymbolComparison(s, list[i]->GetS())) {
+			list[i]->Output();
+		}
+	}
+	if (!flag) {
+		cout << "Abonent not found" << endl;
+	}
+
 }
+
 
 TelephoneBook::~TelephoneBook()
 {

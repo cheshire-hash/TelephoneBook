@@ -18,10 +18,11 @@ public:
 	void SetS(const char* s);
 	void SetT(const char* t);
 
+	TelephoneBook** GetListAbonent();
 	void Init(const char* n, const char* s, const char* t);
 	void Output();
 	bool SymbolComparison(const  char* n, const char* s);
-	void FoundAbonent(TelephoneBook** list, char* n, char* s);
+	void FoundAbonent(const char* n, const char* s);
 	~TelephoneBook();
 };
 

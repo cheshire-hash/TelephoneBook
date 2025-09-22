@@ -95,6 +95,11 @@ void TelephoneBook::SetT(const char* t)
 	strcpy_s(telefonNumber, strlen(t) + 1, t);
 }
 
+TelephoneBook** TelephoneBook::GetListAbonent()
+{
+	return listAbonent;
+}
+
 void TelephoneBook::Init(const char* n, const char* s, const char* t)
 {
 	SetN(n);
@@ -105,10 +110,10 @@ void TelephoneBook::Init(const char* n, const char* s, const char* t)
 void TelephoneBook::Output()
 {
 	for (int i = 0; i < count; i++) {
-		listAbonent[i]->Output();
+		cout << listAbonent[i]->GetN() << " "
+			<< listAbonent[i]->GetS() << " "
+			<< listAbonent[i]->GetT() << endl;
 	}
-	cout << name << " " << surname << " " << telefonNumber << endl;
-
 }
 
 bool TelephoneBook::SymbolComparison(const char* n, const char* s)
@@ -123,20 +128,24 @@ bool TelephoneBook::SymbolComparison(const char* n, const char* s)
 	}
 }
 
-void TelephoneBook::FoundAbonent(TelephoneBook** list, char* n, char* s)
+void TelephoneBook::FoundAbonent(const char* n, const char* s)
 {
 	bool flag = false;
 	for (int i = 0; i < count; i++) {
-		if (SymbolComparison(n, list[i]->GetN()) && SymbolComparison(s, list[i]->GetS())) {
-			list[i]->Output();
+		if (SymbolComparison(n, listAbonent[i]->GetN()) &&
+			SymbolComparison(s, listAbonent[i]->GetS()))
+		{
+			flag = true;
+			cout << "Abonent found: " << listAbonent[i]->GetN() << " "
+				<< listAbonent[i]->GetS() << " "
+				<< listAbonent[i]->GetT() << endl;
 		}
 	}
+
 	if (!flag) {
 		cout << "Abonent not found" << endl;
 	}
-
 }
-
 
 TelephoneBook::~TelephoneBook()
 {

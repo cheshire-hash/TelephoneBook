@@ -17,8 +17,6 @@ public:
 	void SetN(const char* n);
 	void SetS(const char* s);
 	void SetT(const char* t);
-
-	TelephoneBook** GetListAbonent();
 	void Init(const char* n, const char* s, const char* t);
 	void Output();
 	bool SymbolComparison(const  char* n, const char* s);

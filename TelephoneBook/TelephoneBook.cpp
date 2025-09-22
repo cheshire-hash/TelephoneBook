@@ -95,11 +95,6 @@ void TelephoneBook::SetT(const char* t)
 	strcpy_s(telefonNumber, strlen(t) + 1, t);
 }
 
-TelephoneBook** TelephoneBook::GetListAbonent()
-{
-	return listAbonent;
-}
-
 void TelephoneBook::Init(const char* n, const char* s, const char* t)
 {
 	SetN(n);
